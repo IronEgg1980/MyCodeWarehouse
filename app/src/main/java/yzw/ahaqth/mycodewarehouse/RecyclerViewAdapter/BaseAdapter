@@ -1,0 +1,39 @@
+package yzw.ahaqth.mycodewarehouse.RecyclerViewAdapter;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.List;
+
+public abstract class BaseAdapter<E> extends RecyclerView.Adapter<BaseViewHolder> {
+    private int layoutId;
+    protected List<E> mList;
+
+    public BaseAdapter(int layoutId,List<E> list){
+        this.layoutId = layoutId;
+        this.mList = list;
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull final BaseViewHolder holder, int position) {
+        bindData(holder,mList.get(position));
+    }
+
+    @NonNull
+    @Override
+    public BaseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(layoutId,parent,false);
+        return new BaseViewHolder(view);
+    }
+
+    @Override
+    public int getItemCount() {
+        return mList.size();
+    }
+
+    public abstract void bindData(BaseViewHolder baseViewHolder,E data);
+}

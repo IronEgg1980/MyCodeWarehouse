@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--SwipeMenuLayout自定义属性-->
+    <declare-styleable name="SwipeMenuLayout">
+        <attr name="swipeEnable" format="boolean"/>
+        <attr name="ios" format="boolean"/>
+        <attr name="leftSwipe" format="boolean"/>
+    </declare-styleable>
+
+    <!--MyDatePicker自定义属性-->
+    <declare-styleable name="MyDatePicker">
+        <attr name="dateTextNormalColor" format="color"/>
+        <attr name="dateTextSelectedColor" format="color"/>
+        <attr name="dateNormalBG" format="color"/>
+        <attr name="dateSelectedBG" format="color"/>
+        <attr name="dateSelectedDrawable" format="reference"/>
+    </declare-styleable>
+</resources>
